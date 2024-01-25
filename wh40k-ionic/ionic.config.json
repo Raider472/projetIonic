@@ -1,0 +1,7 @@
+{
+  "name": "wh40k-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
