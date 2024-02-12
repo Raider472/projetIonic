@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: FigurineListPage
+  },
+  {
+    path: 'new',
+    loadChildren: () => import('./figurine-new/figurine-new.module').then( m => m.FigurineNewPageModule)
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./figurine/figurine.module').then( m => m.FigurinePageModule)
   }
 ];
 

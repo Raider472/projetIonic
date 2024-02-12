@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/figurine-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajout d'une nouvelle figurine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-item>
+      <ion-input type="text" label="Image" [(ngModel)]="figurine.image"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Name" [(ngModel)]="figurine.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" label="Prix" [(ngModel)]="figurine.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Description" [(ngModel)]="figurine.desc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" label="Minimum de modéles dans une unité" [(ngModel)]="figurine.minFig"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" label="Maximum de modéles dans une unité" [(ngModel)]="figurine.maxFig"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" label="Minimum de Points" [(ngModel)]="figurine.minPoints"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" label="Maximum de Points" [(ngModel)]="figurine.maxPoints"></ion-input>
+    </ion-item>
+  <p class="text-center">
+    <ion-button (click)="add()">Envoyer</ion-button>
+  </p>
+</ion-content>

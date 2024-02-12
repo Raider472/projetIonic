@@ -3,27 +3,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'figurine-list',
-    loadChildren: () => import('./figurine-list/figurine-list.module').then( m => m.FigurineListPageModule)
-  },
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
-  },
-  {
-    path: 'tab',
-    loadChildren: () => import('./tab/tab.module').then( m => m.TabPageModule)
-  },
-
+    loadChildren: () => import('./tab/tab.module').then(m => m.TabPageModule)
+  }
 ];
 
 @NgModule({

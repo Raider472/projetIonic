@@ -1,13 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>figurineList</ion-title>
+    <ion-title>Liste des figurines</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">figurineList</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-list>
+        <ion-col size="6" *ngFor="let figurine of figurines">
+          <ion-card [routerLink]="[figurine.id]">
+            <img [src]="figurine.image" [alt]="figurine.name">
+            <h6>{{figurine.name}}</h6>
+            <h4>{{figurine.price + "€"}}</h4>
+            <p> Figurines dans une unité: {{figurine.minFig}} - {{figurine.maxFig}}</p>
+            <p>Nombre de points: {{figurine.minPoints}} - {{figurine.maxPoints}}</p>
+          </ion-card>
+        </ion-col>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+  <div class="centered-button-container">
+    <ion-button routerLink="new">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </div>
 </ion-content>

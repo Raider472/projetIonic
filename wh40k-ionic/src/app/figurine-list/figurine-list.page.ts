@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FigurineListService } from '../services/figurine-list.service';
+import { Figurine } from '../models/figurine.model';
 
 @Component({
   selector: 'app-figurine-list',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./figurine-list.page.scss'],
 })
 export class FigurineListPage implements OnInit {
+  figurines!: Array<Figurine>;
 
-  constructor() { }
+  constructor(private figurine: FigurineListService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.figurine.getAll().subscribe((data: any) => {
+      this.figurines = data;
+    });
   }
-
 }
+
