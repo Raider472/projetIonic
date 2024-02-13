@@ -24,7 +24,7 @@ export class FigurineNewPage implements OnInit {
 
   async presentToast() {
     const toast = this.toastCtrl.create({
-      message: 'Nouvelle figurine enregistré dans votre liste !',
+      message: 'Nouvelle figurine enregistré !',
       duration: 2000
     });
     (await toast).present().then(() => {
